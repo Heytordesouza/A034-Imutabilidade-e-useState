@@ -24,13 +24,32 @@ function App() {
     id: 0
   })
 
+  const evoluir = () => {
+    const novoPokemon = {
+      ...pokemon,
+      name: "Pikachu",
+      weight: 6,
+      image: "https://archives.bulbagarden.net/media/upload/thumb/0/0d/025Pikachu.png/240px-025Pikachu.png",
+    }
+    setPokemon(novoPokemon)
+  }
+
+
+
   // Para fazer seus próximos pokemons, crie novos estados!
 
   return ( <>
   <GlobalStyles/>
     <FlexContainer>
       {/* Aqui neste componente, passe as props. Lembre-se que também é possivel passar a função de setState via props! */}
-      <PokemonCard/>
+      <PokemonCard name={pokemon.name} 
+      type={pokemon.type} 
+      evolved={pokemon.evolved} 
+      color={pokemon.color}
+      weight={pokemon.weight}
+      image={pokemon.image}
+      evoluirPokemons={evoluir}
+      />
       {/* Crie aqui seus próximos pokemons! */}
     </FlexContainer>
   </>
